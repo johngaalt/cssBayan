@@ -1,0 +1,46 @@
+body {
+  margin: 0 auto;
+}
+
+.accordion-header {
+  background-color: #eee;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding: 10px;
+  display: none;
+}
+
+.accordion-item:first-child .accordion-content {
+  display: block;
+}
+
+.meme {
+  display: block;
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+.meme-1 {
+  background-image: url("../assets/images/gachi_1.jpg");
+}
+
+.meme-2 {
+  background-image: url("../assets/images/gachi_2.jpg");
+}
+
+.meme-3 {
+  background-image: url("../assets/images/gachi_3.jpg");
+}
+
+.meme-4 {
+  background-image: url("../assets/images/gachi_4.jpg");
+}
+
+.accordion-item:hover .accordion-content {
+  display: block;
+}
