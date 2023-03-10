@@ -1,28 +1,92 @@
 body {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+p,
+li,
+ul {
+  margin: 0;
+}
+
+.header {
+  background-color: #eee;
+  border-bottom: 1px rgba(0, 0, 0, 0.6) solid;
+  padding: 20px;
+}
+
+.title {
+  font-size: 36px;
+  line-height: 50px;
+}
+
+.accordion,
+.header {
+  width: 70vw;
   margin: 0 auto;
 }
 
+.accordion-item {
+  transition: all 0.5s ease-in-out;
+}
+
 .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #eee;
   padding: 10px;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.close-icon {
+  display: inline-block;
+  background: url(../assets/icons/close.svg);
+  width: 15px;
+  height: 15px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 15px 15px;
 }
 
 .accordion-content {
   padding: 10px;
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  position: absolute;
 }
 
 .accordion-item:first-child .accordion-content {
-  display: block;
+  opacity: 1;
+  pointer-events: all;
+  display: flex;
 }
 
 .meme {
-  display: block;
-  width: 500px;
-  height: 500px;
-  background-size: cover;
+  display: inline-block;
+  background-size: contain;
+  min-width: 350px;
+  min-height: 350px;
   background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in-out;
 }
 
 .meme-1 {
@@ -42,5 +106,8 @@ body {
 }
 
 .accordion-item:hover .accordion-content {
-  display: block;
+  opacity: 1;
+  pointer-events: all;
+  transition: all 0.5s ease-in-out;
+  position: relative;
 }
