@@ -36,11 +36,40 @@ ul {
   margin: 0 auto;
 }
 
-.accordion-item {
-  transition: all 0.5s ease-in-out;
+input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
 }
 
-.accordion-header {
+.accordion-item {
+  width: 100%;
+  color: #eee;
+  overflow: hidden;
+}
+.accordion-item label {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: #2c3e50;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.accordion-item .label:hover {
+  background: darken(#2c3e50, 10%);
+}
+
+.accordion-item label::after {
+  content: "\276F";
+  transition: all 0.5s;
+  text-align: center;
+}
+
+#accordion-header-1,
+#accordion-header-2,
+#accordion-header-3,
+#accordion-header-4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,40 +79,25 @@ ul {
   transition: all 0.5s ease-in-out;
 }
 
-.close-icon {
-  display: inline-block;
-  background: url(../assets/icons/close.svg);
-  width: 15px;
-  height: 15px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  background-size: 15px 15px;
-}
-
 .accordion-content {
   padding: 10px;
-  opacity: 0;
-  pointer-events: none;
+  max-width: 0;
   transition: all 0.5s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #eee;
-  position: absolute;
 }
 
 .accordion-item:first-child .accordion-content {
-  opacity: 1;
-  pointer-events: all;
-  display: flex;
+  max-height: 100vh;
 }
 
 .meme {
   display: inline-block;
   background-size: contain;
-  min-width: 350px;
-  min-height: 350px;
+  /* min-width: 350px;
+  min-height: 350px; */
   background-position: center;
   background-repeat: no-repeat;
   transition: all 0.5s ease-in-out;
@@ -105,9 +119,15 @@ ul {
   background-image: url("../assets/images/gachi_4.jpg");
 }
 
-.accordion-item:hover .accordion-content {
-  opacity: 1;
-  pointer-events: all;
-  transition: all 0.5s ease-in-out;
-  position: relative;
+input:checked + .label {
+  background: darken(#2c3e50, 10%);
+}
+
+input:checked + .label::after {
+  transform: rotate(90deg);
+}
+
+input:checked ~ .accordion-content {
+  max-height: 100vh;
+  padding: 16px;
 }
