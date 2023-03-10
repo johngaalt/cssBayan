@@ -47,7 +47,8 @@ input {
   color: #eee;
   overflow: hidden;
 }
-.accordion-item label {
+
+.label {
   display: flex;
   justify-content: space-between;
   padding: 16px;
@@ -56,20 +57,17 @@ input {
   cursor: pointer;
 }
 
-.accordion-item .label:hover {
+.label:hover {
   background: darken(#2c3e50, 10%);
 }
 
-.accordion-item label::after {
+label::after {
   content: "\276F";
   transition: all 0.5s;
   text-align: center;
 }
 
-#accordion-header-1,
-#accordion-header-2,
-#accordion-header-3,
-#accordion-header-4 {
+.accordion-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,26 +79,21 @@ input {
 
 .accordion-content {
   padding: 10px;
-  max-width: 0;
-  transition: all 0.5s ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #eee;
 }
 
-.accordion-item:first-child .accordion-content {
-  max-height: 100vh;
-}
-
 .meme {
-  display: inline-block;
+  display: block;
   background-size: contain;
-  /* min-width: 350px;
-  min-height: 350px; */
+  width: 350px;
+  height: 350px;
   background-position: center;
   background-repeat: no-repeat;
   transition: all 0.5s ease-in-out;
+  max-height: 0;
 }
 
 .meme-1 {
@@ -120,14 +113,13 @@ input {
 }
 
 input:checked + .label {
-  background: darken(#2c3e50, 10%);
+  background-color: #1a252f;
 }
 
 input:checked + .label::after {
   transform: rotate(90deg);
 }
 
-input:checked ~ .accordion-content {
+input:checked ~ .accordion-content .meme {
   max-height: 100vh;
-  padding: 16px;
 }
