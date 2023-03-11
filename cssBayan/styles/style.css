@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.2);
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   min-width: 320px;
@@ -48,6 +48,11 @@ input {
   color: #eee;
   overflow: hidden;
   position: relative;
+  border-bottom: 1px solid rgba(255, 255, 2565, 0.6);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
 }
 
 .accordion-title {
@@ -86,7 +91,6 @@ input {
 }
 
 .accordion-content {
-  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,4 +147,5 @@ input:checked ~ .accordion-title::after {
 .label:hover ~ .accordion-content .meme,
 input:checked ~ .accordion-content .meme {
   max-height: 100vh;
+  margin: 10px;
 }
