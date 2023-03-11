@@ -132,6 +132,7 @@ input:checked + .accordion-title {
   height: 100%;
   display: block;
   cursor: pointer;
+  z-index: 10;
 }
 
 .label:hover + .accordion-title::after,
