@@ -23,6 +23,12 @@ ul {
   background-color: #eee;
   border-bottom: 1px rgba(0, 0, 0, 0.6) solid;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  background: url(../assets/images/billy.jpg);
+  background-position: bottom 25px right;
+  /* background-repeat: no-repeat; */
+  background-size: auto;
 }
 
 .title {
