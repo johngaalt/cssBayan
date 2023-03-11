@@ -53,10 +53,11 @@ input {
 .accordion-title {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px 20px;
   background: #2c3e50;
   font-weight: 800;
   cursor: pointer;
+  align-items: center;
 }
 
 .accordion-title:hover {
@@ -64,9 +65,15 @@ input {
 }
 
 .accordion-title::after {
-  content: "\276F";
-  transition: all 0.5s;
+  opacity: 0;
+  content: "+";
+  transition: opacity 0.35s, transform 0.5s 0.25s;
   text-align: center;
+  font-size: 30px;
+}
+
+.accordion:hover .accordion-title::after {
+  opacity: 1;
 }
 
 .accordion-header {
@@ -76,7 +83,6 @@ input {
   background-color: #eee;
   padding: 10px;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
 }
 
 .accordion-content {
@@ -125,11 +131,12 @@ input:checked + .accordion-title {
   width: 100%;
   height: 100%;
   display: block;
+  cursor: pointer;
 }
 
 .label:hover + .accordion-title::after,
 input:checked ~ .accordion-title::after {
-  transform: rotate(90deg);
+  transform: rotate(45deg);
 }
 
 .label:hover ~ .accordion-content .meme,
