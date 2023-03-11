@@ -28,6 +28,7 @@ ul {
 .title {
   font-size: 36px;
   line-height: 50px;
+  color: black;
 }
 
 .accordion,
@@ -52,7 +53,7 @@ input {
 .accordion-title {
   display: flex;
   justify-content: space-between;
-  padding: 16px;
+  padding: 20px;
   background: #2c3e50;
   font-weight: 800;
   cursor: pointer;
@@ -126,8 +127,8 @@ input:checked + .accordion-title {
   display: block;
 }
 
-.label:hover::after,
-input:checked + .label::after {
+.label:hover + .accordion-title::after,
+input:checked ~ .accordion-title::after {
   transform: rotate(90deg);
 }
 
