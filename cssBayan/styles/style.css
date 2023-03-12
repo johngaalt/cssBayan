@@ -25,10 +25,6 @@ ul {
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  background: url(../assets/images/billy.jpg);
-  background-position: bottom 25px right;
-  /* background-repeat: no-repeat; */
-  background-size: auto;
 }
 
 .title {
@@ -142,7 +138,7 @@ input:checked + .accordion-title {
   height: 100%;
   display: block;
   cursor: pointer;
-  z-index: 10;
+  z-index: 100;
 }
 
 .label:hover + .accordion-title::after,
