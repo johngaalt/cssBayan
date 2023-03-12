@@ -28,15 +28,41 @@ ul {
 }
 
 .title {
-  font-size: 36px;
+  font-size: 40px;
   line-height: 50px;
   color: black;
+  font-weight: 800;
+}
+
+@media (max-width: 820px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 420px) {
+  .title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    justify-content: center;
+  }
 }
 
 .accordion,
 .header {
   width: 70vw;
   margin: 0 auto;
+}
+
+@media (max-width: 420px) {
+  .accordion,
+  .header {
+    width: 90vw;
+  }
 }
 
 input {
@@ -50,7 +76,7 @@ input {
   color: #eee;
   overflow: hidden;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 2565, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .accordion-item:last-child {
@@ -63,8 +89,22 @@ input {
   padding: 10px 20px;
   background: #2c3e50;
   font-weight: 800;
+  font-size: 30px;
   cursor: pointer;
   align-items: center;
+  color: #eee;
+}
+
+@media (max-width: 820px) {
+  .accordion-title {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 420px) {
+  .accordion-title {
+    font-size: 20px;
+  }
 }
 
 .accordion-title:hover {
@@ -81,6 +121,10 @@ input {
 
 .accordion:hover .accordion-title::after {
   opacity: 1;
+}
+
+.accordion:hover .accordion-title {
+  color: bisque;
 }
 
 .accordion-header {
@@ -150,4 +194,8 @@ input:checked ~ .accordion-title::after {
 input:checked ~ .accordion-content .meme {
   max-height: 100vh;
   margin: 10px;
+}
+
+input:checked ~ .accordion-title {
+  color: bisque;
 }
