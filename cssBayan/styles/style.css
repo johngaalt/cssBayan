@@ -107,10 +107,6 @@ input {
   }
 }
 
-.accordion-title:hover {
-  background: #1a252f;
-}
-
 .accordion-title::after {
   opacity: 0;
   content: "+";
@@ -170,10 +166,6 @@ input {
   background-image: url("../assets/images/gachi_4.jpg");
 }
 
-input:checked + .accordion-title {
-  background-color: #1a252f;
-}
-
 .label {
   position: absolute;
   top: 0;
@@ -198,4 +190,12 @@ input:checked ~ .accordion-content .meme {
 
 input:checked ~ .accordion-title {
   color: bisque;
+}
+
+input:checked ~ .accordion-title {
+  background-color: #1a252f;
+}
+
+.label:hover + .accordion-title {
+  background: #1a252f;
 }
