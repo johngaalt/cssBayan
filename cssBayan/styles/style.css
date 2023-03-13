@@ -107,15 +107,14 @@ input {
   }
 }
 
-.accordion-title::after {
+.accordion-icon {
   opacity: 0;
-  content: "+";
   transition: opacity 0.35s, transform 0.5s 0.25s;
   text-align: center;
   font-size: 1.875rem;
 }
 
-.accordion:hover .accordion-title::after {
+.accordion:hover .accordion-title .accordion-icon {
   opacity: 1;
 }
 
@@ -177,8 +176,8 @@ input {
   z-index: 100;
 }
 
-.label:hover + .accordion-title::after,
-input:checked ~ .accordion-title::after {
+.label:hover + .accordion-title .accordion-icon,
+input:checked ~ .accordion-title .accordion-icon {
   transform: rotate(45deg);
 }
 
